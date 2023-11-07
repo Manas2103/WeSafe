@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <link rel="stylesheet" href="./location.css">
+</head>
+<body>
+    <div id="map"></div>
+    <div id="latit"></div>
+    <div id="longi"></div>
+    <script>
+    navigator.geolocation.getCurrentPosition(position => {
+        const { latitude, longitude } = position.coords;
+        console.log(position.coords)
+        latit.innerHTML = "Latitude : " + latitude;
+        longi.innerHTML = "Longitude :" + longitude; 
+        console.log(latitude);
+        console.log(longitude);
+        map.innerHTML = `<iframe width = "700" height = "300" src="https://maps.google.com/maps?q=`+latitude+`,`+longitude+`&amp;z=15&amp;output=embed"></iframe>`;
+    });
+    </script>
+</body>
+</html>
+
+
+
